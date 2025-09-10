@@ -1,0 +1,7 @@
+<div class="pokemon-card">
+  <img [src]="image" [alt]="name" class="pokemon-image" />
+  <h3>{{ name | titlecase }}</h3>
+  <p *ngFor="let type of types; let i = index" class="pokemon-type">
+    {{ type | titlecase }}
+  </p>
+</div>
