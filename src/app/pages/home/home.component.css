@@ -1,0 +1,19 @@
+img {
+    max-width: 50%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    margin-top: 6svh;
+}
+
+button {
+    display: block;
+    margin: 0 auto;
+    margin-top: 8svh;
+    padding: 1svh 3svh;
+    font-size: 2svh;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}

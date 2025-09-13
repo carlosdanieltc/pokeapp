@@ -1,1 +1,19 @@
-<p>pokedex works!</p>
+<div class="pokedex-container">
+    <div class="pokedex-buttons">
+        <div></div>
+        <div></div>
+    </div>
+    <div class="pokedex-bot">
+        <app-pokemon-card 
+            *ngFor="let pokemon of pokemons$ | async" 
+            [name]="pokemon.name" 
+            [image]="pokemon.image"
+            [types]="pokemon.types">
+        </app-pokemon-card>
+    </div>
+</div>
+
+<!-- PATH MOBILE -->
+<!-- <svg viewBox="0 0 5 6" xmlns="http://www.w3.org/2000/svg" stroke="black"  stroke-width="0.01" preserveAspectRatio="none">
+            <path d="M 2.1 0.9 Q 2 1 1.9 1 L 0.2 1 q -0.2 0 -0.2 0.2 L 0 5.8 q 0 0.2 0.2 0.2 l 4.6 0 q 0.2 0 0.2 -0.2 L 5 0.2 Q 5 0 4.8 0 L 4 0 Q 4 0 3.2 0 Q 3.11 0 3 0.1 Z" fill="none" />
+        </svg> -->

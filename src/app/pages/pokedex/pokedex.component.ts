@@ -1,20 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { PokeapiService } from '../../core/services/pokeapi.service';
-
+import { PokemonCardComponent } from '../../shared/pokemon-card/pokemon-card.component';
+import { AsyncPipe } from '@angular/common';
 @Component({
   selector: 'app-pokedex',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, PokemonCardComponent, AsyncPipe],
   templateUrl: './pokedex.component.html',
   styleUrl: './pokedex.component.css'
 })
-export class PokedexComponent implements OnInit {
+export class PokedexComponent {
 
-  constructor(private pokeapiService: PokeapiService) { }
+  private pokeapiService = inject(PokeapiService);
 
-  ngOnInit(): void {
-     this.pokeapiService.getPokemonList().subscribe((respuesta: any) => {
-      console.log(respuesta); // Solo muestra el resultado en consola
-    });
-  }
+  pokemons$ = this.pokeapiService.getPokemonList(); // Observable con los datos listos
+  
 }
